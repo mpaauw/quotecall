@@ -1,7 +1,7 @@
 /node_modules
 bundle.js
 npm-debug.log
-/src/actions/index.js
+config.json
 
 # IntelliJ
 *.iml
