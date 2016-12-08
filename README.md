@@ -1,5 +1,5 @@
 # quotecall
-A stock-quoting app built in React.
+A stock-quotation app built in React, <mark>currently a work in progress</mark>.
 
 ### Getting Started ###
 Aside from cloning the quotecall code into your own repository, there is a small amount of additional setup required.
