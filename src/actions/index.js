@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'CKzMHzaNcQm7xuQEfXgg'; // Quandl API Key omitted for security reasons, visit the URL below to create your own.
+const API_KEY = ''; // Quandl API Key omitted for security reasons, visit the URL below to create your own.
 const ROOT_URL = `https://www.quandl.com/api/v3/datasets/WIKI/`; // stock quotes are pulled from: https://www.quandl.com/docs/api#introduction
 
 export const FETCH_QUOTE = 'FETCH_QUOTE';
