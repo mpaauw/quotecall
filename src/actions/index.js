@@ -14,3 +14,5 @@ export function fetchQuote(term){
         payload: request
     };
 }
+
+// test
