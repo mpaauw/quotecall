@@ -16,7 +16,6 @@ function getAPIKey(){
 }
 
 export function fetchQuote(term){
-
     const url = `${term}.json?api_key=${API_KEY}`;
     const request = axios.get(url);
 
