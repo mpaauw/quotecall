@@ -38,3 +38,5 @@ class SearchBar extends Component{
         );
     }
 }
+
+export default connect(SearchBar);
