@@ -8,10 +8,10 @@ export const FETCH_QUOTE = 'FETCH_QUOTE';
 
 export function fetchQuote(term){
 
-    var today = getCurrentDate(0);
-    var yesterday = getCurrentDate(1);
+    var frontDate = getCurrentDate(0);
+    var backDate = getCurrentDate(1);
 
-    const url = `${ROOT_URL}${term}.json?start_date=${yesterday}&end_date=${today}&api_key=${PROTECTED_KEY}`;
+    const url = `${ROOT_URL}${term}.json?start_date=${backDate}&end_date=${frontDate}&api_key=${PROTECTED_KEY}`;
 
     const request = axios.get(url);
 
