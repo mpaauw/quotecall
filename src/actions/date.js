@@ -1,17 +1,17 @@
-export function today(){
-    var currentDate = new Date();
-    var day = currentDate.getDate();
-    var month = currentDate.getMonth() + 1; 
-    var year = currentDate.getFullYear();
+export function getCurrentDate(gap){
+    var today = new Date();
+    var dd = today.getDate() - gap;
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
 
-    if(day < 10) {
-        day = '0' + day
+    if(dd < 10) {
+        dd = '0' + dd;
     } 
 
-    if(month < 10) {
-        month = '0'+month
+    if(mm < 10) {
+        mm = '0' + mm;
     } 
 
-    currentDate = year + month + day;
-    return currentDate;
+    today = yyyy + "" +  mm + "" + dd;
+    return today;
 }
