@@ -5,16 +5,8 @@ import Chart from '../components/chart';
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
 
-        //TEST DRIVER:
-        console.log('quoteData:[' + quoteData + ']');
-
-
         const name = quoteData.dataset.name;
         const retrieved = quoteData.dataset.refreshed_at;
-
-        //TEST DRIVERS:
-        console.log('name: [' + name + ']');
-        console.log('ret:  [' + retrieved + ']');
 
         return (
             <div>
@@ -38,4 +30,3 @@ function mapStateToProps({quote}){
 }
 
 export default connect(mapStateToProps)(QuoteDisplay);
-
