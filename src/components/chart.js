@@ -4,7 +4,7 @@ import highstock from 'highcharts';
 export default (props) => {
     return (
         <div>
-            <highstock data={props.data}>
+            <highstock data={props.data} config={props.config}>
             </highstock>
         </div>
     );

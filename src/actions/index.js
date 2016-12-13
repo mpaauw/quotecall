@@ -8,8 +8,8 @@ export const FETCH_QUOTE = 'FETCH_QUOTE';
 
 export function fetchQuote(term){
 
-    var frontDate = getCurrentDate(0);
-    var backDate = getCurrentDate(1);
+    var frontDate = getCurrentDate(0); // today
+    var backDate = getCurrentDate(7); // one week ago
 
     const url = `${ROOT_URL}${term}.json?start_date=${backDate}&end_date=${frontDate}&api_key=${PROTECTED_KEY}`;
 
