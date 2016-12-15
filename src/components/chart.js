@@ -1,5 +1,5 @@
 import React from 'react';
-import highstock from 'highcharts';
+import HighStock from 'react-highcharts/ReactHighstock.src';
 
 export default (props) => {
     return (
