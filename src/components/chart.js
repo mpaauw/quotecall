@@ -4,8 +4,8 @@ import HighStock from 'react-highcharts/ReactHighstock.src';
 export default (props) => {
     return (
         <div>
-            <highstock data={props.parsedData} config={props.config}>
-            </highstock>
+            <HighStock config={props.config}>
+            </HighStock>
         </div>
     );
 }

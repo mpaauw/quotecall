@@ -45,7 +45,23 @@ class QuoteDisplay extends Component {
             console.log('--')
         }
 
-        const config = {
+        // const localConfig = {
+        //     rangeSelector: {
+        //         selected: 1
+        //     },
+        //     title: {
+        //         text: {name}
+        //     },
+        //     series: [{
+        //         name: {symbol},
+        //         data: {parsedData},
+        //         tooltip: {
+        //         valueDecimals: 2
+        //         }
+        //     }]
+        // };
+
+        const localConfig = {
             rangeSelector: {
                 selected: 1
             },
@@ -56,19 +72,21 @@ class QuoteDisplay extends Component {
                 name: {symbol},
                 data: {parsedData},
                 tooltip: {
-                valueDecimals: 2
+                    valueDecimals: 2
                 }
             }]
-        };
+        }
+
+        // this.props.config = config;
 
         return (
-            <div>
-                <h3>{name} ({symbol})</h3>
-                <h4>{date}</h4>
-            </div>        
             // <div>
-            //     <Chart config={config}/>
-            // </div>    
+            //     <h3>{name} ({symbol})</h3>
+            //     <h4>{date}</h4>
+            // </div>        
+            <div>
+                <Chart config={localConfig}/>
+            </div>    
         );
     }
 
