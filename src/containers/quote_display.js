@@ -21,7 +21,6 @@ const responseColumns = {
  
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
-        console.log('quoteData:', quoteData)
         if(quoteData.length === 0) {
             return;
         } else {
@@ -39,13 +38,6 @@ class QuoteDisplay extends Component {
                     rawData[i][responseColumns.close]
                 ];
                 parsedData.push(dataObj);
-            }
- 
-            // TEST DRIVER:
-            for(var x = 0; x < parsedData.length; x++){
-                console.log('date: [' + parsedData[x].date + ']');
-                console.log('price: [' + parsedData[x].price + ']');
-                console.log('--')
             }
        
             const localConfig = {
