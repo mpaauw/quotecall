@@ -9,7 +9,9 @@ export const FETCH_QUOTE = 'FETCH_QUOTE';
 export function fetchQuote(term){
 
     var frontDate = getCurrentDate(0); // today
-    var backDate = getCurrentDate(2); // two days ago, since it's the beginning of the year
+    var backDate = getCurrentDate(1); // pull all stock data up to a year back
+
+    //const url = `${ROOT_URL}${term}.json?start_date=${backDate}&end_date=${frontDate}&api_key=${PROTECTED_KEY}`;
 
     const url = `${ROOT_URL}${term}.json?start_date=${backDate}&end_date=${frontDate}&api_key=${PROTECTED_KEY}`;
 
