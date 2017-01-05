@@ -44,11 +44,6 @@ class QuoteDisplay extends Component {
             console.log('--')
         }
 
-        var dummyData = [{
-            date: "1/2/2017",
-            price: 65.55
-        }];
-
         const localConfig = {
             rangeSelector: {
                 selected: 1
@@ -58,8 +53,7 @@ class QuoteDisplay extends Component {
             },
             series: [{
                 name: {symbol},
-                //data: {parsedData},
-                data: dummyData,
+                data: {parsedData},
                 tooltip: {
                     valueDecimals: 2
                 }
@@ -82,7 +76,7 @@ class QuoteDisplay extends Component {
     render(){
         return(
             <div>
-                {this.renderQuoteDisplay()}
+                {this.renderQuoteDisplay}
             </div>
         );
     }
