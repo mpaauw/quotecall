@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart';
+import HighStock from 'react-highcharts/ReactHighstock.src';
 
 const responseColumns = {
     date: 0,
@@ -17,8 +18,6 @@ const responseColumns = {
     adj_close: 11,
     adj_volume: 12
 };
-
-
 
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
@@ -45,21 +44,10 @@ class QuoteDisplay extends Component {
             console.log('--')
         }
 
-        // const localConfig = {
-        //     rangeSelector: {
-        //         selected: 1
-        //     },
-        //     title: {
-        //         text: {name}
-        //     },
-        //     series: [{
-        //         name: {symbol},
-        //         data: {parsedData},
-        //         tooltip: {
-        //         valueDecimals: 2
-        //         }
-        //     }]
-        // };
+        var dummyData = [{
+            date: "1/2/2017",
+            price: 65.55
+        }];
 
         const localConfig = {
             rangeSelector: {
@@ -70,7 +58,8 @@ class QuoteDisplay extends Component {
             },
             series: [{
                 name: {symbol},
-                data: {parsedData},
+                //data: {parsedData},
+                data: dummyData,
                 tooltip: {
                     valueDecimals: 2
                 }
@@ -85,15 +74,15 @@ class QuoteDisplay extends Component {
             //     <h4>{date}</h4>
             // </div>        
             <div>
-                <Chart config={localConfig}/>
+                <HighStock config={localConfig}/>
             </div>    
         );
     }
 
-    render(quoteData){
+    render(){
         return(
             <div>
-                {this.props.quote.map(this.renderQuoteDisplay)}
+                {this.renderQuoteDisplay()}
             </div>
         );
     }
