@@ -41,16 +41,12 @@ class QuoteDisplay extends Component {
                 parsedData.push(dataObj);
             }
  
-            // parsedData[{dataObj}]
- 
             // TEST DRIVER:
             for(var x = 0; x < parsedData.length; x++){
                 console.log('date: [' + parsedData[x].date + ']');
                 console.log('price: [' + parsedData[x].price + ']');
                 console.log('--')
             }
- 
-            console.log('this is parsedData:', parsedData);
        
             const localConfig = {
                 rangeSelector: {
@@ -68,14 +64,7 @@ class QuoteDisplay extends Component {
                 }]
             }
  
- 
-            // this.props.config = config;
- 
-            return (
-                // <div>
-                //     <h3>{name} ({symbol})</h3>
-                //     <h4>{date}</h4>
-                // </div>        
+            return (       
                 <div>
                     <HighStock config={localConfig}/>
                 </div>    
