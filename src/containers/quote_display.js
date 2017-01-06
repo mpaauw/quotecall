@@ -31,13 +31,20 @@ class QuoteDisplay extends Component {
             var parsedData = [];
  
             for(var i = 0; i < rawData.length; i++){
+
+                var newDate = new Date(rawData[i][responseColumns.date]);
+
                 var dataObj = [
-                    rawData[i][responseColumns.date],
+                    newDate,
                     rawData[i][responseColumns.close]
                 ];
+
+                // test driver:
+                console.log(dataObj);
+
                 parsedData.push(dataObj);
             }
-       
+
             const localConfig = {
                 rangeSelector: {
                     selected: 1
@@ -50,8 +57,11 @@ class QuoteDisplay extends Component {
                     data: parsedData,                
                     tooltip: {
                         valueDecimals: 2
-                    }
-                }]
+                    }               
+                }],
+                rangeSelector: {
+                    enabled: false
+                }
             }
  
             return (       
