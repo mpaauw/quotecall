@@ -30,7 +30,9 @@ class QuoteDisplay extends Component {
             const rawData = quoteData[0].dataset.data;
             var parsedData = [];
  
-            for(var i = 0; i < rawData.length; i++){
+            //for(var i = 0; i < rawData.length; i++){
+            for(var i = rawData.length - 1; i > 0; i--){
+
 
                 var newDate = new Date(rawData[i][responseColumns.date]).getTime();
 
@@ -44,6 +46,8 @@ class QuoteDisplay extends Component {
 
                 parsedData.push(dataObj);
             }
+
+            //add console log to parsed data object here, for transparency:
 
             const localConfig = {
                 xAxis: {
@@ -65,7 +69,7 @@ class QuoteDisplay extends Component {
                 }],
                 rangeSelector: {
                     //enabled: false
-                    selected: 4
+                    selected: 5
                 }
             }
  
