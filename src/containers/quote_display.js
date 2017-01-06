@@ -30,28 +30,17 @@ class QuoteDisplay extends Component {
             const rawData = quoteData[0].dataset.data;
             var parsedData = [];
  
-            //for(var i = 0; i < rawData.length; i++){
             for(var i = rawData.length - 1; i > 0; i--){
-
-
                 var newDate = new Date(rawData[i][responseColumns.date]).getTime();
-
                 var dataObj = [
                     newDate,
                     rawData[i][responseColumns.close]
                 ];
-
-                // test driver:
-                console.log(dataObj);
-
                 parsedData.push(dataObj);
             }
 
-            //add console log to parsed data object here, for transparency:
-
             const localConfig = {
                 xAxis: {
-                    //type: 'datetime',
                     minRange: 1
                 },
                 rangeSelector: {
@@ -68,7 +57,6 @@ class QuoteDisplay extends Component {
                     }               
                 }],
                 rangeSelector: {
-                    //enabled: false
                     selected: 5
                 }
             }
