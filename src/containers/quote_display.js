@@ -32,7 +32,7 @@ class QuoteDisplay extends Component {
  
             for(var i = 0; i < rawData.length; i++){
 
-                var newDate = new Date(rawData[i][responseColumns.date]);
+                var newDate = new Date(rawData[i][responseColumns.date]).getTime();
 
                 var dataObj = [
                     newDate,
@@ -46,6 +46,10 @@ class QuoteDisplay extends Component {
             }
 
             const localConfig = {
+                xAxis: {
+                    //type: 'datetime',
+                    minRange: 1
+                },
                 rangeSelector: {
                     selected: 1
                 },
@@ -60,7 +64,8 @@ class QuoteDisplay extends Component {
                     }               
                 }],
                 rangeSelector: {
-                    enabled: false
+                    //enabled: false
+                    selected: 4
                 }
             }
  
