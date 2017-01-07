@@ -1,6 +1,9 @@
 {
   "name": "quotecall",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.4.7"
+  },
   "description": "A stock-quotation app built in React, currently a work in progress.",
   "main": "index.js",
   "repository": "https://github.com/mpaauw/quotecall.git",
