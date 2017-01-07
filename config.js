@@ -1,0 +1,1 @@
+export const PROTECTED_KEY = '7GB69YuPvFiVr-FSAEPJ';
