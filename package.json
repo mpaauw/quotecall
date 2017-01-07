@@ -1,11 +1,13 @@
 {
   "name": "quotecall",
-  "version": "0.5",
+  "version": "1.0.0",
   "description": "A stock-quotation app built in React, currently a work in progress.",
   "main": "index.js",
   "repository": "https://github.com/mpaauw/quotecall.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "postinstall": "webpack -p",
+    "start": "node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -28,6 +30,7 @@
   "dependencies": {
     "axios": "^0.15.2",
     "babel-preset-stage-1": "^6.1.18",
+    "express": "^4.14.0",
     "highcharts": "^5.0.6",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
