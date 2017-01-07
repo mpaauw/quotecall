@@ -1,6 +1,8 @@
 # quotecall
 A stock-quotation app built in React, <strong>currently a work in progress</strong>.
 
+Current live build can be found here: http://quotecall.herokuapp.com/
+
 ### Getting Started ###
 Aside from cloning the quotecall code into your own repository, there is a small amount of additional setup required.
 
