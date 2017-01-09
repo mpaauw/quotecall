@@ -21,6 +21,9 @@ const responseColumns = {
  
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
+
+        alert('data: [' + quoteData +']');
+
         if(quoteData.length === 0) {
             return;
         }else if(quoteData.includes('Error')){
