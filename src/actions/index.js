@@ -24,6 +24,9 @@ export function fetchQuote(term){
             };
         })
         .catch(error =>{
+
+            alert('error: [' + error + ']');
+
             return {
                 type: FETCH_QUOTE_FAIL,
                 payload: error
