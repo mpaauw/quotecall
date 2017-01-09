@@ -23,7 +23,7 @@ class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
         if(quoteData.length === 0) {
             return;
-        }else if(!quoteData){
+        }else if(!quoteData[0].dataset){
             alert('Invalid quote entered.');
             return;
         }else { 
