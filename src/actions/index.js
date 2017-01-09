@@ -5,6 +5,14 @@ import { PROTECTED_KEY } from '../../config'; // Quandl API Key omitted for secu
 const ROOT_URL = 'https://www.quandl.com/api/v3/datasets/WIKI/'; // stock quotes are pulled from: https://www.quandl.com/docs/api#introduction
 
 export const FETCH_QUOTE = 'FETCH_QUOTE';
+export const CURRENT_QUOTE = 'CURRENT_QUOTE';
+
+export const stickyText = (param) => {
+    return {
+        type: CURRENT_QUOTE,
+        payload: param
+    }
+};
 
 export function fetchQuote(term){
     const url = `${ROOT_URL}${term}.json?api_key=${PROTECTED_KEY}`;
