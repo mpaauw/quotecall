@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchQuote} from '../actions/index';
+import {stickyText, fetchQuote} from '../actions/index';
 
 class SearchBar extends Component{
     constructor(props){
