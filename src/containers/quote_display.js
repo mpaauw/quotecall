@@ -20,53 +20,12 @@ const responseColumns = {
 };
  
 class QuoteDisplay extends Component {
-    renderQuoteDisplay(quoteData){
-        if(quoteData.length === 0) {
-            return;
-        } else { 
-            const name = quoteData[0].dataset.name.split(' (')[0];            
-            const symbol = quoteData[0].dataset.dataset_code;
-            const date = quoteData[0].dataset.data[0][responseColumns.date];
-            const rawData = quoteData[0].dataset.data;
-            var parsedData = [];
- 
-            for(var i = rawData.length - 1; i > 0; i--){
-                var newDate = new Date(rawData[i][responseColumns.date]).getTime();
-                var dataObj = [
-                    newDate,
-                    rawData[i][responseColumns.close]
-                ];
-                parsedData.push(dataObj);
-            }
-
-            const localConfig = {
-                xAxis: {
-                    minRange: 1
-                },
-                rangeSelector: {
-                    selected: 1
-                },
-                title: {
-                    text: name
-                },
-                series: [{
-                    name: symbol,
-                    data: parsedData,                
-                    tooltip: {
-                        valueDecimals: 2
-                    }               
-                }],
-                rangeSelector: {
-                    selected: 5
-                }
-            }
- 
-            return (       
-                <div>
-                    <HighStock config={localConfig}/>
-                </div>    
-            );
-        }
+    renderQuoteDisplay(configData){
+        return (       
+            <div>
+                <HighStock config={configData}/>
+            </div>    
+        );      
     }
  
     render(){
