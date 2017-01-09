@@ -7,6 +7,12 @@ const ROOT_URL = 'https://www.quandl.com/api/v3/datasets/WIKI/'; // stock quotes
 export const FETCH_QUOTE = 'FETCH_QUOTE';
 
 export function fetchQuote(term){
+
+    if(term === '' || term === null){
+        alert('Please enter a valid quote.');
+        return;
+    }
+
     const url = `${ROOT_URL}${term}.json?api_key=${PROTECTED_KEY}`;
     const request = axios.get(url);
     return {
