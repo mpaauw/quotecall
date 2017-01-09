@@ -5,12 +5,11 @@ import { PROTECTED_KEY } from '../../config'; // Quandl API Key omitted for secu
 const ROOT_URL = 'https://www.quandl.com/api/v3/datasets/WIKI/'; // stock quotes are pulled from: https://www.quandl.com/docs/api#introduction
 
 export const FETCH_QUOTE = 'FETCH_QUOTE';
-export const FETCH_QUOTE_FAIL = 'FETCH_QUOTE_FAIL';
 
 export function fetchQuote(term){
 
     if(term === '' || term === null){
-        alert('Please enter a valid quote.');
+        alert('Please enter a stock ticker.');
         return;
     }
 
@@ -25,12 +24,9 @@ export function fetchQuote(term){
         })
         .catch(error =>{
 
-            alert('error: [' + error + ']');
+            alert('Please enter a valid stock ticker.');
 
-            return {
-                type: FETCH_QUOTE_FAIL,
-                payload: error
-            };
+            return;
         });
 
     
