@@ -23,7 +23,7 @@ const responseColumns = {
     adj_volume: 12
 };
 
-const localConfig;
+export const localConfig;
 
 export function fetchQuote(term){
     const url = `${ROOT_URL}${term}.json?api_key=${PROTECTED_KEY}`;
