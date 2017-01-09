@@ -22,12 +22,7 @@ const responseColumns = {
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
 
-        alert('data: [' + quoteData +']');
-
         if(quoteData.length === 0) {
-            return;
-        }else if(quoteData.includes('Error')){
-            alert('Invalid quote entered.');
             return;
         }else { 
             const name = quoteData[0].dataset.name.split(' (')[0];            
