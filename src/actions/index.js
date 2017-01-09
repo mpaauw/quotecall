@@ -10,10 +10,19 @@ export const FETCH_QUOTE_FAIL = 'FETCH_QUOTE_FAIL';
 export function fetchQuote(term){
     const url = `${ROOT_URL}${term}.json?api_key=${PROTECTED_KEY}`;
 
-    const request = axios.get(url);
+    const request = axios.get(url)
+        .then(response =>{
+            return {
+                type: FETCH_QUOTE,
+                payload: request
+            };
+        })
+        .catch(error =>{
+            return {
+                type: FETCH_QUOTE_FAIL,
+                payload: error
+            };      
+        });
+
     
-    return {
-        type: FETCH_QUOTE,
-        payload: request
-    };
 }
