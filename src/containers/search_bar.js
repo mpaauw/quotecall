@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {stickyText, fetchQuote} from '../actions/index';
+import {fetchQuote} from '../actions/index';
 
 class SearchBar extends Component{
     constructor(props){
@@ -41,7 +41,7 @@ class SearchBar extends Component{
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators({stickyText, fetchQuote}, dispatch);
+    return bindActionCreators({fetchQuote}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps, {stickyText})(SearchBar);   
+export default connect(null, mapDispatchToProps)(SearchBar);   
