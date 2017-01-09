@@ -44,4 +44,4 @@ function mapDispatchToProps(dispatch){
     return bindActionCreators({stickyText, fetchQuote}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);   
+export default connect(null, mapDispatchToProps, {stickyText})(SearchBar);   
