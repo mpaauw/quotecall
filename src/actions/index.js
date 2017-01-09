@@ -23,15 +23,13 @@ const responseColumns = {
     adj_volume: 12
 };
 
-export const localConfig;
-
 export function fetchQuote(term){
     const url = `${ROOT_URL}${term}.json?api_key=${PROTECTED_KEY}`;
 
     const request = axios.get(url)
         .then( response => {
             if(response.length === 0) {
-            return;
+                return;
             } else { 
                 const name = response[0].dataset.name.split(' (')[0];            
                 const symbol = response[0].dataset.dataset_code;
@@ -46,7 +44,7 @@ export function fetchQuote(term){
                         rawData[i][responseColumns.close]
                     ];
                     parsedData.push(dataObj);
-                }
+                };
 
                 localConfig = {
                     xAxis: {
@@ -68,7 +66,12 @@ export function fetchQuote(term){
                     rangeSelector: {
                         selected: 5
                     }
-                }
+                };
+
+                return {
+                    type: FETCH_QUOTE,
+                    payload: localConfig
+                };
             }
         })
         .catch(error => {
@@ -78,8 +81,8 @@ export function fetchQuote(term){
             };
         })
 
-    return {
-        type: FETCH_QUOTE,
-        payload: localConfig
-    };
+    // return {
+    //     type: FETCH_QUOTE,
+    //     payload: localConfig
+    // };
 }
