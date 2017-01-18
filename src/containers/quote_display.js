@@ -24,7 +24,7 @@ class QuoteDisplay extends Component {
 
         if(quoteData.length === 0) {
             return;
-        }else if(quoteData[0].hasOwnProperty("quandl_error")){
+        }else if(quoteData.hasOwnProperty("quandl_error")){
             return (
                 <div>
                     <p>You have tried searching a ticker that does not exist, please search a valid ticker!</p>
