@@ -24,7 +24,13 @@ class QuoteDisplay extends Component {
 
         if(quoteData.length === 0) {
             return;
-        }else { 
+        }else if(quoteData[0].hasOwnProperty("quandl_error")){
+            return (
+                <div>
+                    <p>You have tried searching a ticker that does not exist, please search a valid ticker!</p>
+                </div>
+            );
+        } else { 
             const name = quoteData[0].dataset.name.split(' (')[0];            
             const symbol = quoteData[0].dataset.dataset_code;
             const date = quoteData[0].dataset.data[0][responseColumns.date];
