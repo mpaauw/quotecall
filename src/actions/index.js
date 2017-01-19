@@ -10,7 +10,12 @@ export function fetchQuote(term){
     const url = `${ROOT_URL}${term}.json?api_key=${PROTECTED_KEY}`;
     
     const request = axios.get(url);
-    
+
+    if(request.status !== 200){
+        alert("Please search a valid quote!");
+        return;
+    }
+
     return {
         type: FETCH_QUOTE,
         payload: request

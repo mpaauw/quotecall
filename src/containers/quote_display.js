@@ -25,11 +25,7 @@ class QuoteDisplay extends Component {
         //     return;
         // }
         if(quoteData == ''){
-            return (
-                <div>
-                    <p>Please search a valid ticker.</p>
-                </div>
-            );
+            return;
         }
         // else if(quoteData[0].hasOwnProperty("quandl_error")){
         //     return (
