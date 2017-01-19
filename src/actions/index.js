@@ -11,7 +11,7 @@ export function fetchQuote(term){
     
     const request = axios.get(url);
 
-    if(request.status !== 200){
+    if(request.status / 10 === 40 || request.status / 10 === 50){
         alert("Please search a valid quote!");
         return;
     }
