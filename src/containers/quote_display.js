@@ -21,19 +21,9 @@ const responseColumns = {
  
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
-        // if(quoteData.length === 0) {
-        //     return;
-        // }
-        if(quoteData == ''){
+        if(quoteData.length === 0 || quoteData === '') {
             return;
         }
-        // else if(quoteData[0].hasOwnProperty("quandl_error")){
-        //     return (
-        //         <div>
-        //             <p>You have tried searching a ticker that does not exist, please search a valid ticker!</p>
-        //         </div>
-        //     );
-        // } 
         else { 
             const name = quoteData[0].dataset.name.split(' (')[0];            
             const symbol = quoteData[0].dataset.dataset_code;
