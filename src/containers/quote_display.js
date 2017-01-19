@@ -21,12 +21,15 @@ const responseColumns = {
  
 class QuoteDisplay extends Component {
     renderQuoteDisplay(quoteData){
-
-        // test driver
-        alert('data: [' + quoteData + ']');
-
-        if(quoteData.length === 0) {
-            return;
+        // if(quoteData.length === 0) {
+        //     return;
+        // }
+        if(quoteData == ''){
+            return (
+                <div>
+                    <p>Please search a valid ticker.</p>
+                </div>
+            );
         }
         // else if(quoteData[0].hasOwnProperty("quandl_error")){
         //     return (
