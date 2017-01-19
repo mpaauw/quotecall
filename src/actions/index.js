@@ -11,6 +11,10 @@ export function fetchQuote(term){
     
     const request = axios.get(url);
 
+    // test drivers:
+    alert("request:[" + request.status + "]");
+    alert("concat: [" + request.status / 10 + "]");
+
     if(request.status / 10 === 40 || request.status / 10 === 50){
         alert("Please search a valid quote!");
         return;
