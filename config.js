@@ -1,1 +1,0 @@
-export const PROTECTED_KEY = 'qckRiXj-usBoJX-gggyN';
